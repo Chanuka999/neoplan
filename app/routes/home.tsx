@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <h1 className="text-3xl text-indigo-700 font-extrabold">Home</h1>
+      <h1 className="text-3xl text-indigo-700 font-extrabold">Home page</h1>
     </div>
   );
 }
