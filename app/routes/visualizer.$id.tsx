@@ -1,10 +1,23 @@
 import React from "react";
+import { useLocation } from "react-router";
 
-export const loader = async ({ params }) => {
-  // You can fetch data here using params.id if needed
-  return null;
+const visualizerId = () => {
+  const location = useLocation();
+  const { initialImage, name } = location.state || {};
+  return (
+    <section>
+      <h1>{name || "Untitled project"}</h1>
+
+      <div className="visualizer">
+        {initialImage && (
+          <div className="image-container">
+            <h2>Source Image</h2>
+            <img src={initialImage} alt="source" />
+          </div>
+        )}
+      </div>
+    </section>
+  );
 };
 
-export default function VisualizerIdRoute() {
-  return <div>Visualizer route is working! (id page)</div>;
-}
+export default visualizerId;
